@@ -1,0 +1,97 @@
+{% extends "/layout.html" %}
+
+{% block title -%}
+추천
+{%- endblock %}
+
+{% block head -%}
+  {{ super() }}
+{%- endblock %}
+
+{% block body -%}
+{{ super() }}
+<section class="mainheader__container">
+  <div class="mainheader_grid">
+    <div class="mainheader_grid_row gird_title_2">
+      <h2 class="mainheader_title">{{data}} 기반 추천 여행지 입니다</h2>
+      <a href="/">
+        <button>다시 추천받으러 가기</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="t_i_items">
+  <ul class="t_i_col">
+    {% for i in range(0, 10) %}
+    <li class="t_i_item">
+      <div class="t_i_content">
+        <div class="t_i_img">
+          <img class="reimg" src="{{ imgs[i] }}" alt="{{ title[i] }}">
+        </div>
+        <div class="t_i_place">
+          <span>{{ place[i] }}</span>
+        </div>
+        <div class="t_i_title_2">
+          <h2 class="t_i_title">{{ title[i] }}</h2>
+        </div>
+        </div>
+      </li>
+      {% endfor %}
+  </ul>  
+  <ul class="t_i_col">
+    {% for i in range(10, 20) %}
+    <li class="t_i_item">
+      <div class="t_i_content">
+        <div class="t_i_img">
+          <img class="reimg" src="{{ imgs[i] }}" alt="{{ title[i] }}">
+        </div>
+        <div class="t_i_place">
+          <span>{{ place[i] }}</span>
+        </div>
+        <div>
+          <h2 class="t_i_title">{{ title[i] }}</h2>
+        </div>
+        </div>
+      </li>
+      {% endfor %}
+  </ul>  
+  <ul class="t_i_col">
+    {% for i in range(20, 30) %}
+    <li class="t_i_item">
+      <div class="t_i_content">
+        <div class="t_i_img">
+          <img class="reimg" src="{{ imgs[i] }}" alt="{{ title[i] }}">
+        </div>
+        <div class="t_i_place">
+          <span>{{ place[i] }}</span>
+        </div>
+        <div>
+          <h2 class="t_i_title">{{ title[i] }}</h2>
+        </div>
+        </div>
+      </li>
+      {% endfor %}
+  </ul>  
+  <ul class="t_i_col">
+    {% for i in range(30, 40) %}
+    <li class="t_i_item">
+      <div class="t_i_content">
+        <div class="t_i_img">
+          <img class="reimg" src="{{ imgs[i] }}" alt="{{ title[i] }}">
+        </div>
+        <div class="t_i_place">
+          <span>{{ place[i] }}</span>
+        </div>
+        <div>
+          <h2 class="t_i_title">{{ title[i] }}</h2>
+        </div>
+        </div>
+      </li>
+      {% endfor %}
+  </ul>  
+</div>
+{%- endblock %}
+{% block footer %}
+  {{super()}}
+{% endblock %}
